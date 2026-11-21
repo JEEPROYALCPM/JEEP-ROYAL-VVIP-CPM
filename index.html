@@ -1,63 +1,162 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090909">
-<title>JEEP ROYAL VVIP CPM</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<style>
-:root{--bg:#08090b;--panel:#121418;--panel2:#191c22;--gold:#e7c36b;--gold2:#a77b2b;--line:#34302a;--muted:#a9a7a1;--white:#f5f2e9;--rain:linear-gradient(100deg,#f7c85c,#f58bba,#9d8bff,#68d8d0,#f7c85c)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#3b2b12 0,transparent 42%),var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1100px;margin:auto;padding:0 18px}.top{position:sticky;top:0;z-index:10;background:#090a0ceF;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font-weight:900;letter-spacing:.04em;color:var(--gold);text-decoration:none}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks button,.btn{border:1px solid var(--line);background:linear-gradient(135deg,#211d14,#111317);color:var(--white);padding:10px 14px;border-radius:12px}.btn.primary{border-color:#9b762e;background:linear-gradient(135deg,#d7b35d,#8d6422);color:#17120a;font-weight:800}.btn:disabled{opacity:.45;cursor:not-allowed}.hero{text-align:center;padding:76px 0 48px}.crown{font-size:42px;filter:drop-shadow(0 0 14px #d6a93e)}h1{font-size:clamp(32px,7vw,62px);margin:10px 0;background:var(--rain);background-size:250% auto;background-clip:text;color:transparent;animation:shine 8s linear infinite;font-weight:950;letter-spacing:.02em}@keyframes shine{to{background-position:250% center}}.sub{letter-spacing:.2em;color:var(--gold);font-weight:800}.hero p{color:var(--muted);line-height:1.7;max-width:680px;margin:18px auto 24px}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.section{padding:32px 0;scroll-margin-top:84px}.section h2{font-size:24px;color:var(--gold);margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.card{background:linear-gradient(145deg,#17191e,#0f1013);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 12px 34px #0005}.card h3{margin:0 0 12px}.muted{color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin:8px 0}.field label{font-size:13px;color:#d9c99f}.field input,.field select,.field textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #45413a;background:#0b0d10;color:var(--white);min-width:0}.field textarea{min-height:100px;resize:vertical}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tabs button.active{border-color:var(--gold);color:var(--gold)}.listing{display:flex;flex-direction:column;gap:10px}.listing img{width:100%;max-height:220px;object-fit:cover;border-radius:12px;background:#090909}.pill{display:inline-block;padding:4px 9px;border:1px solid var(--gold2);border-radius:99px;color:var(--gold);font-size:12px}.price{font-size:22px;font-weight:900;color:var(--gold)}.notice{padding:12px;border:1px solid var(--line);border-radius:12px;color:var(--muted);line-height:1.6}.hidden{display:none!important}.table{width:100%;border-collapse:collapse}.table td,.table th{padding:10px;border-bottom:1px solid var(--line);text-align:left}.footer{padding:36px 0 50px;text-align:center;color:var(--muted);border-top:1px solid var(--line);margin-top:36px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:30;background:#242018;border:1px solid var(--gold2);border-radius:12px;padding:12px 16px;max-width:90%;display:none}.toast.show{display:block}.small{font-size:12px}.memberline{display:flex;align-items:center;gap:10px}.avatar{width:38px;height:38px;object-fit:cover;border-radius:50%;border:1px solid var(--gold2)}@media(max-width:600px){.nav{align-items:flex-start;padding:12px 0;flex-direction:column}.hero{padding-top:52px}.table{font-size:13px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#09090d">
+  <title>JEEP ROYAL VVIP CPM</title>
+  <style>
+    :root{--bg:#09090d;--panel:#14141c;--line:#30303c;--gold:#d7b45a;--muted:#a5a5b2;--white:#f7f7fb}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#292033 0,#09090d 48%);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+    .wrap{width:min(100% - 28px,760px);margin:0 auto;padding:28px 0 60px}
+    header{text-align:center;padding:22px 8px 28px}
+    .crown{font-size:35px}.brand{font-weight:900;letter-spacing:1.5px;font-size:clamp(22px,6vw,34px);background:linear-gradient(90deg,#f7d77c,#fff,#a78bfa,#55e6d0,#f7d77c);background-size:250%;color:transparent;background-clip:text;-webkit-background-clip:text}
+    .sub{color:var(--muted);font-size:12px;letter-spacing:2px;margin-top:8px}
+    .card{background:rgba(20,20,28,.94);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 55px #0008}
+    .tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+    button{font:inherit;cursor:pointer;border:0}
+    .tab{padding:12px;border-radius:12px;background:#252530;color:#c7c7d1;font-weight:800}
+    .tab.active{background:linear-gradient(100deg,#c59b3d,#f4d98b);color:#17120a}
+    h1{font-size:22px;margin:0 0 6px}.desc{color:var(--muted);font-size:13px;line-height:1.6;margin:0 0 20px}
+    label{display:block;font-size:13px;font-weight:750;margin:15px 0 7px}
+    input{width:100%;padding:14px;border:1px solid #3b3b49;border-radius:12px;background:#0d0d13;color:white;font-size:16px;outline:none}
+    input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d7b45a20}
+    .hint{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.5}
+    .primary{width:100%;margin-top:20px;padding:15px;border-radius:13px;background:linear-gradient(100deg,#c49a3e,#f3d98e);color:#17120a;font-weight:900}
+    .primary:disabled{opacity:.5;cursor:not-allowed}
+    .status{display:none;margin-top:14px;padding:12px;border-radius:11px;font-size:13px;line-height:1.5;background:#242431;color:#eee}
+    .status.error{display:block;background:#401f27;color:#ffd6dc}.status.ok{display:block;background:#18352b;color:#c9ffe4}
+    .verify{display:flex;align-items:center;gap:10px;margin-top:17px;padding:12px;border:1px solid #3b3b49;border-radius:12px;font-size:13px;color:#ddd}
+    .verify input{width:18px;height:18px;accent-color:#d7b45a}
+    .verify .tick{margin-left:auto;color:#8ce0ad;font-weight:800}
+    .hidden{display:none!important}
+    .note{margin:18px 2px 0;color:#92929e;font-size:11px;line-height:1.6;text-align:center}
+    .footer{text-align:center;color:#777783;font-size:11px;margin-top:22px}
+    @media(min-width:600px){.card{padding:30px}.wrap{padding-top:42px}}
+  </style>
 </head>
 <body>
-<header class="top"><div class="wrap nav"><a class="brand" href="#">👑 JEEP ROYAL VVIP CPM</a><div class="navlinks"><button onclick="go('market')">차량 거래</button><button onclick="go('prices')">가격 안내</button><button onclick="go('report')">신고 센터</button><button onclick="go('account')">계정</button></div></div></header>
-<main class="wrap">
-<section class="hero" id="home"><div class="crown">👑</div><h1>JEEP ROYAL VVIP CPM</h1><div class="sub">PREMIUM CPM1 / CPM2 MARKET</div><p>CPM1과 CPM2의 차량 거래와 데칼 정보를 한곳에서 확인하는 프리미엄 커뮤니티입니다.</p><div class="actions"><button class="btn primary" onclick="go('account')">로그인 / 회원가입</button><button class="btn" onclick="go('market')">차량 거래 보기</button><button class="btn" onclick="go('prices')">가격 안내</button><button class="btn" onclick="go('report')">사기 신고 센터</button></div><p class="small">DEVELOPED BY · BY_ 카파킹 지프 (유튜버) CPM</p></section>
-
-<section class="section" id="account"><h2>회원가입 및 로그인</h2><div class="grid">
-<div class="card"><h3>로그인</h3><div class="field"><label>이메일</label><input id="loginEmail" type="email" autocomplete="email"></div><div class="field"><label>비밀번호</label><input id="loginPass" type="password" autocomplete="current-password"></div><button class="btn primary" onclick="login()">로그인</button></div>
-<div class="card"><h3>회원가입</h3><div class="field"><label>이메일 *</label><input id="regEmail" type="email" autocomplete="email"></div><div class="field"><label>비밀번호 * (8자 이상 권장)</label><input id="regPass" type="password" autocomplete="new-password"></div><div class="field"><label>카파킹 실제 게임 ID *</label><input id="gameId" maxlength="40"></div><div class="field"><label>카파킹 실제 닉네임 *</label><input id="nickname" maxlength="40"></div><div class="field"><label>카카오톡 오픈프로필 링크 *</label><input id="kakao" type="url" placeholder="https://open.kakao.com/..."></div><div class="field"><label>프로필 사진 *</label><input id="avatarFile" type="file" accept="image/*"></div><button class="btn primary" onclick="register()">회원가입</button><p class="small muted">게임 계정 비밀번호나 인증 코드는 입력하지 마세요.</p></div></div><div class="card" style="margin-top:14px"><div id="session" class="muted">로그인 상태가 여기에 표시됩니다.</div><button class="btn hidden" id="logoutBtn" onclick="logout()">로그아웃</button></div></section>
-
-<section class="section" id="market"><h2>차량 거래 및 데칼</h2><div class="tabs"><button class="btn active" data-game="CPM1" onclick="setGame('CPM1',this)">CPM1</button><button class="btn" data-game="CPM2" onclick="setGame('CPM2',this)">CPM2</button></div><div class="tabs" id="categoryTabs"><button class="btn active" data-cat="sales" onclick="setCat('sales',this)">판매 메뉴</button><button class="btn" data-cat="logo" onclick="setCat('logo',this)">로고차 데칼</button><button class="btn" data-cat="itasha" onclick="setCat('itasha',this)">이타샤 데칼</button><button class="btn" data-cat="racing" onclick="setCat('racing',this)">레이싱카 데칼</button></div><div class="card"><div class="formgrid"><div class="field"><label>상태 필터</label><select id="statusFilter" onchange="loadListings()"><option value="">전체</option><option>판매 중</option><option>예약 중</option><option>판매 완료</option></select></div><div class="field"><label>검색</label><input id="searchText" placeholder="차량명 또는 판매자" oninput="renderListings()"></div></div><div id="listings" class="grid"><div class="notice">게시글을 불러오는 중입니다.</div></div></div>
-<div class="card" style="margin-top:14px"><h3>차량 판매 등록</h3><div class="formgrid"><div class="field"><label>차량 종류 *</label><input id="carName" placeholder="예: BMW M4"></div><div class="field"><label>가격 (원) *</label><input id="carPrice" type="number" min="0"></div><div class="field"><label>카파킹 실제 ID *</label><input id="sellerGameId"></div><div class="field"><label>분류 *</label><select id="listingCategory"><option value="sales">판매 메뉴</option><option value="logo">로고차 데칼</option><option value="itasha">이타샤 데칼</option><option value="racing">레이싱카 데칼</option></select></div></div><div class="field"><label>판매 설명</label><textarea id="carDesc"></textarea></div><div class="field"><label>차량 사진 *</label><input id="carPhoto" type="file" accept="image/*"></div><button class="btn primary" onclick="createListing()">판매글 등록하기</button><p class="small muted">등록 게시글은 검토 전까지 공식 인증되지 않습니다. 본인이 권리를 가진 사진만 등록하세요.</p></div></section>
-
-<section class="section" id="prices"><h2>CPM1 가격 안내</h2><div class="notice">아래 항목은 운영자가 제공 가능 여부와 게임 규정 준수 여부를 확인한 뒤 안내하는 참고 가격표입니다. 게임 보안 우회, 계정 침해 또는 무단 조작을 돕는 작업은 제공하지 마세요.</div><div class="grid" id="priceCards"></div><div class="card" style="margin-top:14px"><h3>크롬 도색 할인 계산기</h3><p class="muted small">크롬 도색 항목에 한해 3개 이상 구매 시 5% 할인</p><div class="field"><label>할인 대상 크롬 도색 합계 (원)</label><input id="chromeTotal" type="number" min="0" value="0" oninput="calcDiscount()"></div><div class="field"><label>구매 개수</label><input id="chromeCount" type="number" min="0" value="0" oninput="calcDiscount()"></div><div class="price" id="discountResult">최종 금액: 0원</div></div></section>
-
-<section class="section" id="report"><h2>사기 신고 센터</h2><div class="card"><div class="field"><label>신고 대상 닉네임 *</label><input id="reportNick"></div><div class="field"><label>카파킹 실제 ID</label><input id="reportGameId"></div><div class="field"><label>신고 사유 *</label><select id="reportReason"><option>대금 미지급 / 차량 미지급</option><option>허위 판매글</option><option>ID 도용 및 사칭</option><option>사진·데칼 도용</option><option>거래 방해 및 비매너</option><option>기타</option></select></div><div class="field"><label>거래 상세 내용 *</label><textarea id="reportDetails"></textarea></div><div class="field"><label>증거 사진 (선택)</label><input id="evidenceFile" type="file" accept="image/*"></div><button class="btn primary" onclick="submitReport()">신고 접수</button><p class="small muted">신고 내용은 관리자 검토용으로 저장됩니다. 허위 신고와 타인의 개인정보 공개를 삼가세요.</p></div></section>
-
-<section class="section" id="admin"><h2>관리자 대시보드</h2><div class="card"><p id="adminMsg" class="muted">관리자 권한 확인이 필요합니다.</p><div id="adminContent" class="hidden"><h3>신고 목록</h3><div id="adminReports"></div><h3>게시글 관리</h3><div id="adminListings"></div><p class="small muted">이 화면의 표시 여부만으로 권한이 보호되는 것은 아닙니다. 실제 조치는 RLS와 서버 검증 정책에 의해 제한되어야 합니다.</p></div></div></section>
-
-<section class="section"><h2>이용 규정 및 문의</h2><div class="card muted">작업 가능 여부와 가격을 먼저 확인해 주세요. 게임 업데이트에 따라 기능이 제한될 수 있습니다. 게임 계정 비밀번호나 인증정보를 요구하지 않습니다. 허위 판매, 사칭, 사진 도용, 협박 및 거래 방해는 금지합니다. 거래 증거를 안전하게 보관하고 피해가 의심되면 관련 기관에 상담·신고하세요.<br><br>개발자: BY_ 카파킹 지프 (유튜버) CPM<br><a style="color:var(--gold)" href="https://open.kakao.com/me/jeep" target="_blank" rel="noopener">카카오톡 개발자 문의</a></div></section>
-</main><footer class="footer"><div class="wrap">👑 JEEP ROYAL VVIP CPM · THE ROYAL PREMIUM CAR MARKET</div></footer><div id="toast" class="toast"></div>
+<div class="wrap">
+  <header>
+    <div class="crown">👑</div>
+    <div class="brand">JEEP ROYAL VVIP CPM</div>
+    <div class="sub">CAR PARKING MULTIPLAYER 1 &amp; 2</div>
+  </header>
+  <main class="card">
+    <div class="tabs">
+      <button class="tab active" id="loginTab" type="button">로그인</button>
+      <button class="tab" id="signupTab" type="button">회원가입</button>
+    </div>
+    <section id="loginPanel">
+      <h1>다시 오신 걸 환영합니다</h1>
+      <p class="desc">가입한 아이디와 비밀번호로 로그인하세요.</p>
+      <form id="loginForm">
+        <label for="loginUsername">아이디</label>
+        <input id="loginUsername" autocomplete="username" maxlength="24" placeholder="아이디 입력" required>
+        <label for="loginPassword">비밀번호</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" placeholder="비밀번호 입력" required>
+        <button class="primary" type="submit">로그인</button>
+      </form>
+    </section>
+    <section id="signupPanel" class="hidden">
+      <h1>새 계정 만들기</h1>
+      <p class="desc">이메일 입력 없이 아이디와 비밀번호로 가입합니다.</p>
+      <form id="signupForm">
+        <label for="signupUsername">아이디</label>
+        <input id="signupUsername" autocomplete="username" minlength="3" maxlength="24" pattern="[A-Za-z0-9-]+" placeholder="영문·숫자·하이픈 3~24자" required>
+        <div class="hint">영문, 숫자, 하이픈(-)만 사용할 수 있어요. 하이픈으로 시작하거나 끝낼 수 없습니다.</div>
+        <label for="signupPassword">비밀번호</label>
+        <input id="signupPassword" type="password" autocomplete="new-password" minlength="8" placeholder="8자 이상 입력" required>
+        <label for="signupPassword2">비밀번호 재입력</label>
+        <input id="signupPassword2" type="password" autocomplete="new-password" minlength="8" placeholder="비밀번호 다시 입력" required>
+        <div class="verify">
+          <input id="verifyCheck" type="checkbox" required>
+          <span>본인 확인을 완료했습니다.</span>
+          <span class="tick">✓ 인증 확인</span>
+        </div>
+        <button class="primary" type="submit">회원가입 완료</button>
+      </form>
+    </section>
+    <div id="message" class="status" role="status" aria-live="polite"></div>
+  </main>
+  <p class="note">비밀번호는 안전하게 인증 서비스에 전달됩니다. 게임 계정 비밀번호는 절대 입력하지 마세요.</p>
+  <div class="footer">© JEEP ROYAL VVIP CPM</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const SUPABASE_URL='https://gxeriuynnaasebovpyxl.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY='sb_publishable_7Zx9h3IhdReAtwn9QGFn8g_A_dS8SbD';
-const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-let user=null,profile=null,currentGame='CPM1',currentCat='sales',cache=[];
-const categories={sales:'판매 메뉴',logo:'로고차 데칼',itasha:'이타샤 데칼',racing:'레이싱카 데칼'};
-function toast(s){let t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200)}
-function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
-function val(id){return document.getElementById(id).value.trim()}
-function fileOk(f){return f&&f.size<5*1024*1024&&f.type.startsWith('image/')}
-async function login(){let {data,error}=await db.auth.signInWithPassword({email:val('loginEmail'),password:document.getElementById('loginPass').value});if(error)return toast(error.message);user=data.user;await refreshProfile()}
-async function register(){let email=val('regEmail'),password=document.getElementById('regPass').value,gid=val('gameId'),nick=val('nickname'),kakao=val('kakao'),photo=document.getElementById('avatarFile').files[0];if(!email||password.length<8||!gid||!nick||!kakao||!fileOk(photo))return toast('필수 항목을 확인해 주세요. 사진은 5MB 미만이어야 합니다.');if(!/^https:\/\/open\.kakao\.com\//.test(kakao))return toast('카카오 오픈프로필 링크를 확인해 주세요.');let {data,error}=await db.auth.signUp({email,password});if(error)return toast(error.message);if(!data.user)return toast('이메일 인증 후 로그인해 주세요.');user=data.user;let path=`${user.id}/avatar-${Date.now()}`;let up=await db.storage.from('profile-images').upload(path,photo,{upsert:true});if(up.error)return toast('프로필 사진 업로드 실패: '+up.error.message);let url=db.storage.from('profile-images').getPublicUrl(path).data.publicUrl;let p=await db.from('profiles').upsert({id:user.id,game_id:gid,nickname:nick,kakao_url:kakao,avatar_url:url},{onConflict:'id'});if(p.error)return toast(p.error.message);toast('회원가입 정보가 저장됐습니다. 이메일 인증이 필요할 수 있습니다.');await refreshProfile()}
-async function logout(){await db.auth.signOut();user=null;profile=null;updateSession()}
-async function refreshProfile(){let {data}=await db.auth.getUser();user=data.user;if(user){let p=await db.from('profiles').select('*').eq('id',user.id).maybeSingle();profile=p.data||null}updateSession();await checkAdmin()}
-function updateSession(){let el=document.getElementById('session');el.textContent=user?`로그인: ${profile?.nickname||user.email} ${profile?.role==='developer'?'👑 DEVELOPER':profile?.role==='admin'?'ADMIN':''}`:'로그인 상태가 아닙니다.';document.getElementById('logoutBtn').classList.toggle('hidden',!user)}
-async function checkAdmin(){let box=document.getElementById('adminContent'),msg=document.getElementById('adminMsg');if(profile?.role==='admin'||profile?.role==='developer'){box.classList.remove('hidden');msg.textContent='관리자 권한이 확인되었습니다.';await loadAdmin()}else{box.classList.add('hidden');msg.textContent='관리자 전용 영역입니다. 승인된 계정만 접근할 수 있습니다.'}}
-function setGame(g,b){currentGame=g;document.querySelectorAll('[data-game]').forEach(x=>x.classList.toggle('active',x===b));loadListings()}
-function setCat(c,b){currentCat=c;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));loadListings()}
-async function loadListings(){let q=db.from('listings').select('id,game,category,car_name,price,game_id,description,image_url,status,created_at,seller_id,profiles(nickname)').eq('game',currentGame).eq('category',currentCat).eq('review_status','approved').order('created_at',{ascending:false});let status=val('statusFilter');if(status)q=q.eq('status',status);let {data,error}=await q;cache=data||[];renderListings();if(error)document.getElementById('listings').innerHTML='<div class="notice">게시판을 불러오지 못했습니다. SQL 설정과 RLS를 확인해 주세요: '+error.message+'</div>'}
-function renderListings(){let term=val('searchText').toLowerCase(),items=cache.filter(x=>(x.car_name+' '+(x.profiles?.nickname||'')).toLowerCase().includes(term));let el=document.getElementById('listings');if(!items.length){el.innerHTML='<div class="notice">등록된 승인 게시글이 없습니다.</div>';return}el.innerHTML=items.map(x=>`<article class="card listing"><img src="${esc(x.image_url)}" alt="차량 사진"><div><span class="pill">${esc(x.status)}</span> <span class="pill">${esc(x.game)}</span></div><h3>${esc(x.car_name)}</h3><div class="price">${Number(x.price).toLocaleString('ko-KR')}원</div><div class="muted small">판매자: ${esc(x.profiles?.nickname||'회원')} · ID: ${esc(x.game_id)}</div><p>${esc(x.description||'설명 없음')}</p>${user&&user.id===x.seller_id?`<button class="btn" onclick="markSold('${x.id}')">판매 완료 처리</button>`:''}</article>`).join('')}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-async function createListing(){if(!user)return toast('로그인 후 등록해 주세요.');let name=val('carName'),price=Number(val('carPrice')),gid=val('sellerGameId'),desc=val('carDesc'),photo=document.getElementById('carPhoto').files[0],cat=val('listingCategory');if(!name||!gid||!Number.isFinite(price)||price<0||!fileOk(photo))return toast('차량명, 가격, 게임 ID, 사진을 확인해 주세요.');let path=`${user.id}/listing-${Date.now()}`;let up=await db.storage.from('vehicle-images').upload(path,photo);if(up.error)return toast(up.error.message);let url=db.storage.from('vehicle-images').getPublicUrl(path).data.publicUrl;let {error}=await db.from('listings').insert({seller_id:user.id,game:currentGame,category:cat,car_name:name,price,game_id:gid,description:desc,image_url:url,status:'판매 중',review_status:'pending'});if(error)return toast(error.message);toast('게시글이 접수됐습니다. 관리자 검토 후 공개됩니다.');['carName','carPrice','sellerGameId','carDesc'].forEach(id=>document.getElementById(id).value='');document.getElementById('carPhoto').value=''}
-async function markSold(id){let {error}=await db.from('listings').update({status:'판매 완료'}).eq('id',id).eq('seller_id',user.id);if(error)return toast(error.message);toast('판매 완료 처리했습니다.');loadListings()}
-async function submitReport(){if(!user)return toast('신고 접수는 로그인 후 이용해 주세요.');let nick=val('reportNick'),details=val('reportDetails'),photo=document.getElementById('evidenceFile').files[0],url=null;if(!nick||!details)return toast('신고 대상과 상세 내용을 입력해 주세요.');if(photo){if(!fileOk(photo))return toast('증거 사진은 5MB 미만 이미지여야 합니다.');let path=`${user.id}/evidence-${Date.now()}`;let up=await db.storage.from('report-evidence').upload(path,photo);if(up.error)return toast(up.error.message);url=path}let {error}=await db.from('reports').insert({reporter_id:user.id,target_nickname:nick,target_game_id:val('reportGameId'),reason:val('reportReason'),details,evidence_path:url});if(error)return toast(error.message);toast('신고가 접수됐습니다.');['reportNick','reportGameId','reportDetails'].forEach(id=>document.getElementById(id).value='')}
-async function loadAdmin(){let r=await db.from('reports').select('*').order('created_at',{ascending:false}).limit(50);document.getElementById('adminReports').innerHTML=r.error?'<p class="muted">신고 목록을 불러오지 못했습니다.</p>':(r.data.length?r.data.map(x=>`<div class="notice">${esc(x.target_nickname)} · ${esc(x.reason)}<br>${esc(x.details)}</div>`).join(''):'<p class="muted">접수된 신고가 없습니다.</p>');let l=await db.from('listings').select('id,car_name,game,review_status,status').order('created_at',{ascending:false}).limit(50);document.getElementById('adminListings').innerHTML=l.error?'<p class="muted">게시글 목록을 불러오지 못했습니다.</p>':(l.data.length?l.data.map(x=>`<div class="notice">${esc(x.game)} · ${esc(x.car_name)} · ${esc(x.review_status)} · ${esc(x.status)} ${x.review_status==='pending'?`<button class="btn" onclick="approveListing('${x.id}')">승인</button>`:''}</div>`).join(''):'<p class="muted">게시글이 없습니다.</p>')}
-async function approveListing(id){let {error}=await db.from('listings').update({review_status:'approved'}).eq('id',id);if(error)return toast(error.message);toast('게시글을 승인했습니다.');loadAdmin();loadListings()}
-function calcDiscount(){let total=Math.max(0,Number(val('chromeTotal'))||0),count=Math.max(0,Number(val('chromeCount'))||0),final=count>=3?Math.round(total*.95):total;document.getElementById('discountResult').textContent=`최종 금액: ${final.toLocaleString('ko-KR')}원${count>=3?' (5% 할인 적용)':' (할인 조건 미충족)'}`}
-const prices=[['CHROME & CUSTOM','크롬 휠|500','크롬 창문|500','크롬 캘리퍼|500','크롬 스포일러|500','크롬 헤드라이트|500','크롬 바디|500','투컬러 휠|1000'],['VEHICLE SERVICE','차량 복사 1개당|1000','차량 복사 5개 세트|4750','W16 미지원 차량|500'],['UNLOCK SERVICE','차량 잠금 해제|500','현질 차량 잠금 해제|500','집 잠금 해제|500','클랜 의상 잠금 해제|500','사이렌 잠금 해제|500','모든 사이렌 잠금 해제|1500'],['GAME MONEY & ID SERVICE','게임머니 최대 5,000만|500','코인 최대 50만|500','긴 닉네임 ID 변경|1000','무지개 ID 변경|1500','그라데이션 ID 변경|2000']];
-document.getElementById('priceCards').innerHTML=prices.map(group=>`<div class="card"><h3>${group[0]}</h3>${group.slice(1).map(s=>{let [n,p]=s.split('|');return `<div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)"><span>${n}</span><b style="color:var(--gold)">${Number(p).toLocaleString('ko-KR')}원</b></div>`}).join('')}</div>`).join('');
-(async()=>{let {data}=await db.auth.getSession();user=data.session?.user||null;if(user)await refreshProfile();else updateSession();await loadListings()})();
-</script></body></html>
+  // Supabase 프로젝트의 공개 publishable key만 사용하세요.
+  // service_role 키나 데이터베이스 비밀번호를 브라우저 코드에 넣지 마세요.
+  const SUPABASE_URL = "https://gxeriuynnaasebovpyxl.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_7Zx9h3IhdReAtwn9QGFn8g_A_dS8SbD";
+  const { createClient } = supabase;
+  const db = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+  // Supabase Auth는 이메일 형식을 요구하므로, 화면에는 이메일을 노출하지 않고
+  // 아이디를 내부용 별칭 주소로 변환합니다. Auth 설정에서 이메일 확인을 꺼야
+  // 이메일 없이 즉시 가입이 완료됩니다. 이 별칭 주소로 메일은 받을 수 없습니다.
+  const toAliasEmail = username => username.trim().toLowerCase() + "@accounts.jeep-royal.invalid";
+
+  const $ = id => document.getElementById(id);
+  function showMessage(text, type="ok") {
+    const box = $("message"); box.textContent = text;
+    box.className = "status " + type;
+  }
+  function switchTab(which) {
+    const signup = which === "signup";
+    $("loginPanel").classList.toggle("hidden", signup);
+    $("signupPanel").classList.toggle("hidden", !signup);
+    $("loginTab").classList.toggle("active", !signup);
+    $("signupTab").classList.toggle("active", signup);
+    $("message").className = "status";
+  }
+  $("loginTab").addEventListener("click", () => switchTab("login"));
+  $("signupTab").addEventListener("click", () => switchTab("signup"));
+
+  $("signupForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const username = $("signupUsername").value.trim();
+    const password = $("signupPassword").value;
+    const confirm = $("signupPassword2").value;
+    if (!/^[A-Za-z0-9](?:[A-Za-z0-9-]{1,22}[A-Za-z0-9])$/.test(username)) {
+      return showMessage("아이디는 영문·숫자·하이픈 3~24자이며 하이픈으로 시작하거나 끝날 수 없습니다.", "error");
+    }
+    if (password.length < 8) return showMessage("비밀번호는 8자 이상 입력해 주세요.", "error");
+    if (password !== confirm) return showMessage("비밀번호가 서로 일치하지 않습니다.", "error");
+    if (!$("verifyCheck").checked) return showMessage("본인 확인 체크를 완료해 주세요.", "error");
+    const button = $("signupForm").querySelector("button"); button.disabled = true;
+    try {
+      const { data, error } = await db.auth.signUp({
+        email: toAliasEmail(username),
+        password,
+        options: { data: { username } }
+      });
+      if (error) throw error;
+      if (data.session) {
+        showMessage("회원가입 및 인증이 완료됐어요. 로그인 상태입니다.", "ok");
+      } else {
+        showMessage("가입 요청은 접수됐지만 Supabase에서 이메일 확인이 켜져 있어요. Auth 설정에서 Confirm email을 꺼야 이메일 없이 바로 가입됩니다.", "error");
+      }
+    } catch (err) {
+      showMessage(err.message || "회원가입에 실패했습니다. 아이디가 이미 사용 중인지 확인해 주세요.", "error");
+    } finally { button.disabled = false; }
+  });
+
+  $("loginForm").addEventListener("submit", async e => {
+    e.preventDefault();
+    const username = $("loginUsername").value.trim();
+    const password = $("loginPassword").value;
+    const button = $("loginForm").querySelector("button"); button.disabled = true;
+    try {
+      const { error } = await db.auth.signInWithPassword({
+        email: toAliasEmail(username),
+        password
+      });
+      if (error) throw error;
+      showMessage("로그인 완료됐어요!", "ok");
+    } catch (err) {
+      showMessage("로그인에 실패했습니다. 아이디와 비밀번호를 확인해 주세요.", "error");
+    } finally { button.disabled = false; }
+  });
+</script>
+</body>
+</html>
